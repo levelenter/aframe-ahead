@@ -12,9 +12,8 @@ AFRAME.registerComponent('ahead',{
 
 		position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
 		position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
-		this.camera.setAttribute('position', this.position);
+		this.camera.setAttribute('position', position);
 	},
-
 	init: function () {
 		this.camera = document.querySelector('a-camera');
 		if(!this.camera){
