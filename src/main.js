@@ -1,6 +1,6 @@
 AFRAME.registerComponent('ahead',{
 	schema: {
-		speed: {type: 'number'}
+		speed: {type: 'number', default: 1}
 	},
 	tick: function (time, timeDelta) {
 		// console.log(this,this.attrValue.speed,time,timeDelta);
