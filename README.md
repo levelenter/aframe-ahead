@@ -1,5 +1,5 @@
 # aframe-ahead
-aframe component , Always move camera move straight ahead.
+aframe component , Always move camera straight ahead.
 
 Use as shown below.
 
