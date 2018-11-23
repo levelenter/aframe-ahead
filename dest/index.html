@@ -1,8 +1,12 @@
 <html>
-	<script src='https://aframe.io/releases/0.8.2/aframe.min.js' ></script>
+	<script src='https://aframe.io/releases/0.8.0/aframe.min.js' ></script>
 	<script src="./aframe-ahead.js" ></script>
 	<a-scene  >
-		<a-camera ahead ></a-camera>
-		<a-box position="0 0 -10" color="red" >
+		<a-entity 
+		camera look-controls wasd-controls
+		position="0 1.8 5" ahead ></a-entity>
+		<a-box position="0 0 -10" color="red" ></a-box>
+
+		<a-text id="debug" color="red"></a-text>
 	</a-scene>
 </html>
