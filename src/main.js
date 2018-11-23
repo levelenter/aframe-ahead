@@ -1,10 +1,10 @@
 AFRAME.registerComponent('ahead',{
 	schema: {
-		speed: {type: 'number', default: 1}
+		type:'number', default : '1'
 	},
 	tick: function (time, timeDelta) {
-		// console.log(this,this.attrValue.speed,time,timeDelta);
-		let speed = this.attrValue.speed / 60;
+		// console.log(this,this.attrValue,time,timeDelta);
+		let speed = (this.attrValue ? this.attrValue : 1) / 60;
 
 		this.position.x += -Math.cos((this.rotation.y - 90) * Math.PI / 180) * speed;
 		this.position.z += Math.sin((this.rotation.y - 90) * Math.PI / 180) * speed;

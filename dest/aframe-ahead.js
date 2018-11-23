@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nAFRAME.registerComponent('ahead', {\n\tschema: {\n\t\tspeed: { type: 'number', default: 1 }\n\t},\n\ttick: function tick(time, timeDelta) {\n\t\t// console.log(this,this.attrValue.speed,time,timeDelta);\n\t\tvar speed = this.attrValue.speed / 60;\n\n\t\tthis.position.x += -Math.cos((this.rotation.y - 90) * Math.PI / 180) * speed;\n\t\tthis.position.z += Math.sin((this.rotation.y - 90) * Math.PI / 180) * speed;\n\t\tthis.camera.setAttribute('position', this.position);\n\t},\n\n\tinit: function init() {\n\t\tthis.camera = document.querySelector('a-camera');\n\t\tthis.position = this.camera.getAttribute('position');\n\t\tthis.rotation = this.camera.getAttribute('rotation');\n\t}\n});\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("\n\nAFRAME.registerComponent('ahead', {\n\tschema: {\n\t\ttype: 'number', default: '1'\n\t},\n\ttick: function tick(time, timeDelta) {\n\t\t// console.log(this,this.attrValue,time,timeDelta);\n\t\tvar speed = (this.attrValue ? this.attrValue : 1) / 60;\n\n\t\tthis.position.x += -Math.cos((this.rotation.y - 90) * Math.PI / 180) * speed;\n\t\tthis.position.z += Math.sin((this.rotation.y - 90) * Math.PI / 180) * speed;\n\t\tthis.camera.setAttribute('position', this.position);\n\t},\n\n\tinit: function init() {\n\t\tthis.camera = document.querySelector('a-camera');\n\t\tthis.position = this.camera.getAttribute('position');\n\t\tthis.rotation = this.camera.getAttribute('rotation');\n\t}\n});\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 
