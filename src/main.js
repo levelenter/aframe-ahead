@@ -7,18 +7,14 @@ AFRAME.registerComponent('ahead',{
 
 		let speed = (this.attrValue ? this.attrValue : 1) / 60;
 
-		let position = this.camera.getAttribute('position');
-		let rotation = this.camera.getAttribute('rotation');
+		let position = this.el.getAttribute('position');
+		let rotation = this.el.getAttribute('rotation');
 
 		position.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;
 		position.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;
-		this.camera.setAttribute('position', position);
+		this.el.setAttribute('position', position);
 	},
 	init: function () {
-		this.camera = document.querySelector('a-camera');
-		if(!this.camera){
-			this.camera = document.querySelector('[camera]')
-		}
 	}
 });
 

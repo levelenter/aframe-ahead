@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nAFRAME.registerComponent('ahead', {\n\tschema: {\n\t\ttype: 'number', default: '1'\n\t},\n\ttick: function tick(time, timeDelta) {\n\n\t\tvar speed = (this.attrValue ? this.attrValue : 1) / 60;\n\n\t\tvar position = this.camera.getAttribute('position');\n\t\tvar rotation = this.camera.getAttribute('rotation');\n\n\t\tposition.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;\n\t\tposition.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;\n\t\tthis.camera.setAttribute('position', position);\n\t},\n\tinit: function init() {\n\t\tthis.camera = document.querySelector('a-camera');\n\t\tif (!this.camera) {\n\t\t\tthis.camera = document.querySelector('[camera]');\n\t\t}\n\t}\n});\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("\n\nAFRAME.registerComponent('ahead', {\n\tschema: {\n\t\ttype: 'number', default: '1'\n\t},\n\ttick: function tick(time, timeDelta) {\n\n\t\tvar speed = (this.attrValue ? this.attrValue : 1) / 60;\n\n\t\tvar position = this.el.getAttribute('position');\n\t\tvar rotation = this.el.getAttribute('rotation');\n\n\t\tposition.x += -Math.cos((rotation.y - 90) * Math.PI / 180) * speed;\n\t\tposition.z += Math.sin((rotation.y - 90) * Math.PI / 180) * speed;\n\t\tthis.el.setAttribute('position', position);\n\t},\n\tinit: function init() {}\n});\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 
